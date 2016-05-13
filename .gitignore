@@ -1,6 +1,9 @@
 
 # Created by https://www.gitignore.io/api/windows,osx,jekyll,node
 
+## Dist ##
+dist
+
 ### Windows ###
 # Windows image file caches
 Thumbs.db
@@ -28,7 +31,7 @@ $RECYCLE.BIN/
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
 
 # Thumbnails
 ._*

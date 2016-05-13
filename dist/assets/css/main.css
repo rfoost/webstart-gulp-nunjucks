@@ -188,6 +188,9 @@ body {
 .right {
   float: right; }
 
+.active {
+  color: red; }
+
 /* ---Font Edits--- */
 .noWrap {
   white-space: nowrap; }

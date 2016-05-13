@@ -21,10 +21,10 @@ function getDataForFile(file) {
 }
 
 gulp.task('nunjucks', function () {
-  return gulp.src('html/pages/*.html')
+  return gulp.src('src/html/pages/*.html')
     .pipe(data(getDataForFile))
     .pipe(nunjucksRender({
-    path: 'html/templates/'
+    path: 'src/html/templates/'
   }))
     .pipe(gulp.dest('dist'));
 });
@@ -50,7 +50,7 @@ gulp.task('bs-reload', function () {
 });
 
 gulp.task('images', function(){
-  gulp.src('assets/img/**/*')
+  gulp.src('src/assets/img/**/*')
     .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
     .pipe(gulp.dest('dist/assets/img/'));
 });
@@ -60,16 +60,17 @@ gulp.task('images', function(){
  * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
  */
 gulp.task('sass', function () {
-    return gulp.src('assets/css/main.sass')
+    return gulp.src('src/assets/css/main.sass')
         .pipe(plumber({
-         errorHandler: function (error) {
-         console.log(error.message);
-         this.emit('end');
-        }}))
+        errorHandler: function (err) {
+            console.log(err);
+            this.emit('end');
+            }
+        }))
         .pipe(sass({
-        includePaths: ['css'],
-        onError: browserSync.notify
-    }))
+            includePaths: ['css'],
+            onError: browserSync.notify
+        }))
         .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
         .pipe(gulp.dest('dist/assets/css/'))
         .pipe(browserSync.reload({stream:true}))
@@ -77,7 +78,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('scripts', function(){
-  return gulp.src('assets/js/**/*.js')
+  return gulp.src('src/assets/js/**/*.js')
     .pipe(plumber({
       errorHandler: function (error) {
         console.log(error.message);
@@ -97,8 +98,8 @@ gulp.task('scripts', function(){
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
- gulp.watch('assets/css/**', ['sass']);
- gulp.watch('assets/js/**', ['scripts']);
+ gulp.watch('src/assets/css/**', ['sass']);
+ gulp.watch('src/assets/js/**', ['scripts']);
  gulp.watch('**/*.html', ['nunjucks-rebuild']);
 });
 
