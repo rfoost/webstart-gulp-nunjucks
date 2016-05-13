@@ -1,69 +1,25 @@
-Quench
-
-Gulp is a command-line JavaScript task runner that automates your web workflow by way of self-scripted tasks. Quench easily creates those self-scripted tasks based on your custom input.
-
-On quenchjs.com
-===============
-
-After selecting your custom "Gulp Options," your gulpfile.js and package.json are automatically created for you in your browser. At this point you have a few options. You can:
-
-1. Copy and paste these files into your own project. Here you'll need to make sure all of your directories are set up properly and then you can continue on to the "Installing Supplemental Files" section.
-
-2. Save these files into your own project. Like copy and paste, you'll need to make sure all of your directories are set up properly and then you can continue on to the "Installing Supplemental Files" section.
-
-3. If you're using a supported browser, you can click the "Save Project as Zip" button to download these and any supplemental files as a Zip file. The Zip file includes gulpfile.js, package.json, as well as an appropriate directory structure and a few starter style files if appropriate. See the "Using the Zip File" section.
+#### Installation ####
+1. Install node.js
+2. run 'npm install'
+3. run 'gulp'
 
 
-Using the Zip File
-==================
+## gulpfile.js && package.json ##
+1. Project dependancies can be found in package.json
+2. Gulp behaviors can be modified in gulpfile.js
 
-Download the Zip file and extract it to your desired project location.
+##Features##
+Browser Sync
+Sass/Scss
+Nunjucks
+Uglify
+Autoprefixer - *unsure how reliable it is
 
-
-Installing Supplemental Files
-=============================
-
-For all of this magic to work, your computer needs a few extra files to get Gulp up and running in your project.
-
-You'll need to make sure you have both [Node](http://nodejs.org) and [Gulp](http://gulpjs.com) installed before moving forward. If you already have both, keep on going, and if not, you'll only need to install them once.
-
-Navigate to your project directory using the command line and run the following command:
-    npm install
-
-That's it! You're ready to start using Gulp.
-
-
-Using Gulp
-==========
-
-Default Task
-------------
-
-    gulp
-
-Running the default task automatically watches your project folders for any changes and runs the accompanying task. For example, if you've elected to run tasks on your JavaScript, anytime you change a JavaScript file gulp will automatically run those tasks, including a browser refresh if you've included BrowserSync.
-
-CSS
----
-    gulp styles
-
-Running the gulp styles task will run your selected CSS tasks once.
-
-JavaScript
-----------
-
-    gulp scripts
-
-Running the gulp scripts task will run your selected JavaScript tasks once.
-
-Images
-------
-
-    gulp images
-
-Running the gulp images task will run your selected image tasks once.
-
-Feedback
-========
-
-I'd love to hear your thoughts on Quench, any suggestions you might have, or any bugs you come across. Send all feedback to: feedback@quenchjs.com
+#### Build Info ####
+1. This build supports sass or scss. Declare your file as .sass or .scss and use @import in the -index.sass file in its directory.
+2. This build includes bourbon, it offers a ton of optional mixins. The only one currently inserted into the project is its symantic grid system.
+    A basic example can be found at src/assets/css/5-pages/_index.sass
+    For more information:
+    To learn about the grid and other features: https://youtu.be/8ItNE_DX6Cc?t=29m17s
+    http://www.sitepoint.com/sass-bourbon-neat-lightweight-semantic-grids/
+    

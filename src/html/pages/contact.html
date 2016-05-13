@@ -1,12 +1,16 @@
 <!-- index.html -->
 {% extends "layout.html" %} {% block content %}
 
-    <h3>This Nav has Active Pagination</h3> 
+    <div class="index">
+        <div class="wrap">
+            <h3>This Nav has Active Pagination</h3> 
 
-    {% set active_page = "contact" %} 
-    {% include "partials/navigation.html" %}
+            {% set active_page = "contact" %} 
+            {% include "partials/navigation.html" %}
 
-    <br />
-    <h2>Run 'gulp' from root of project.</h2> 
+            <br />
+            <h2>Run 'gulp' from root of project.</h2> 
+        </div>
+    </div>
 
 {% endblock %}
